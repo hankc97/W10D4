@@ -1,8 +1,6 @@
 import configureStore from './store/store';
 import {receiveTodos, receiveTodo, removeToDo} from './actions/todo_actions';
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
     const h1 = document.createElement('h1')
