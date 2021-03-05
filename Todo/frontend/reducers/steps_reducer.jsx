@@ -2,29 +2,20 @@ import {receiveStep, receiveSteps, removeStep} from '../actions/step_actions';
 import {RECEIVE_STEP, RECEIVE_STEPS, REMOVE_STEP} from '../actions/step_actions';
 
 const steps = {
-    todos: {
-      1: {
-        id: 1,
-        title: 'take a shower',
-        body: 'and be clean',
-        done: false
-      }
-    },
-    steps: {
-      1: { // this is the step with id = 1
+    1: { // this is the step with id = 1
         id: 1,
         title: 'walk to store',
         done: false,
         todo_id: 1
-      },
-      2: { // this is the step with id = 2
+    },
+    2: { // this is the step with id = 2
         id: 2,
         title: 'buy soap',
         done: false,
         todo_id: 1
-      }
     }
 }
+
 
 
 const stepsReducer = (state = steps, action) => {
@@ -37,7 +28,7 @@ const stepsReducer = (state = steps, action) => {
             nextState[action.steps.id] = undefined;
             return nextState;
         case RECEIVE_STEP:
-            nextState[action.steps.id] = action.steps;
+            nextState[action.step.id] = action.step;
             return nextState;
         case RECEIVE_STEPS:
             action.steps.forEach((step) => {
