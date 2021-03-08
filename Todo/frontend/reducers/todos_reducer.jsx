@@ -20,7 +20,7 @@ const todosReducer = (state = todos, action) => {
     Object.freeze(state);
 
     const nextState = Object.assign({}, state);
-
+    debugger
     switch (action.type) {
         case REMOVETODO:
             // nextState[action.todo.id] = undefined;

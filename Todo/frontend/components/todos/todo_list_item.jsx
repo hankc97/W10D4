@@ -1,16 +1,24 @@
 import React from 'react';
-import { removeToDo } from '../../actions/todo_actions';
 import {uniqueId} from './util';
 
 
-export const TodoListItem = (props) => {
-    return (
-        <div>   
-            <li id= {uniqueId()}>
-                {props.todo.title}
-                <button onClick={removeToDo}>Delete Todo</button>
-            </li>
-            
-        </div>
-    )
+export class TodoListItem extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+
+
+    render() {
+        debugger
+        return (
+            <div>   
+                <li id= {uniqueId()}>
+                    {this.props.todo.title}
+                    <button onClick={this.props.removeTodo.bind(this, this.props.todo)}>Delete Todo</button>
+                    {/* callback can be passed as () => this.props.removeTodo(this.props.todo) */}
+                </li>
+                
+            </div>
+        )}
 }

@@ -3,7 +3,6 @@ import {TodoListItem} from './todo_list_item';
 import TodoForm from './todo_form';
 
 const TodoList = ({todos, receiveTodo, removeTodo}) => {
-    debugger
     return (
             <div>
                 <h3>Todo List goes here!</h3>
