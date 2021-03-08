@@ -23,7 +23,8 @@ const todosReducer = (state = todos, action) => {
 
     switch (action.type) {
         case REMOVETODO:
-            nextState[action.todo.id] = undefined;
+            // nextState[action.todo.id] = undefined;
+            delete nextState[action.todo.id];
             return nextState;
         case RECEIVE_TODO:
             nextState[action.todo.id] = action.todo;
